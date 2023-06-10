@@ -20,6 +20,7 @@ import Offers from "./components/Offers";
 import Bookmarks from "./components/Bookmarks";
 import Signin from "./components/Signin";
 import Signup from "./components/Signup";
+import ProductDetails from "./components/ProductDetails";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,7 +31,9 @@ function App() {
         </Route>
 
         <Route path="/home" element={<HomePage />}>
-          <Route path="products" element={<Products />} />
+          <Route path="products" element={<Products />}>
+            <Route path=":id" element={<ProductDetails />} />
+          </Route>
           <Route path="offers" element={<Offers />} />
           <Route path="bookmarks" element={<Bookmarks />} />
         </Route>

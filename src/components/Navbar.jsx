@@ -9,9 +9,9 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Input,
   Button,
 } from "@chakra-ui/react";
+// import { useState } from "react";
 const Navbar = (props) => {
   const handleLogout = () => {
     localStorage.clear();
@@ -34,7 +34,6 @@ const Navbar = (props) => {
           h={12}
           src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
         />
-        <Input placeholder="search" w={"40vw"} />
       </Flex>
 
       {/* avatar */}
