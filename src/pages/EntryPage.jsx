@@ -3,14 +3,14 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 const EntryPage = () => {
   return (
     <Box>
-      <Flex justifyContent={"center"} alignItems={"center"} gap={"1rem"}>
+      <Flex justifyContent={"center"} gap={"1rem"} p={"1rem 0"}>
         <NavLink to="/signin">
-          <Text p={"1rem"} bg={"gray.300"}>
+          <Text p={"1rem"} bg={"gray.300"} borderRadius={"10px"}>
             Sign In
           </Text>
         </NavLink>
         <NavLink to="/">
-          <Text p={"1rem"} bg={"gray.300"}>
+          <Text p={"1rem"} bg={"gray.300"} borderRadius={"10px"}>
             Sign Up
           </Text>
         </NavLink>

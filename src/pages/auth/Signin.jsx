@@ -35,7 +35,7 @@ export default function Signin() {
               as="form"
               mx="auto"
               w={{ base: "90%", md: 500 }}
-              h="100vh"
+              h="55vh"
               justifyContent="center"
               onSubmit={formik.handleSubmit}
             >

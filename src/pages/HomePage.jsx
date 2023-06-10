@@ -5,13 +5,19 @@ import Footer from "../layouts/Footer";
 function HomePage() {
   return (
     <Box minH={"100vh"}>
-      <Grid templateColumns={"repeat(6, 1fr)"} gap={2} minH={"100vh"}>
+      <Grid
+        templateColumns={"repeat(6, 1fr)"}
+        gap={2}
+        boxShadow={"xl"}
+        minH={"100vh"}
+      >
         {/* sidebar */}
         <GridItem
           colSpan={"1"}
           minH={"100vh"}
           boxShadow={"md"}
-          borderRadius={"10px"}
+          borderRight={"2px"}
+          borderColor={"gray.200"}
         >
           <Sidebar />
         </GridItem>
@@ -20,7 +26,8 @@ function HomePage() {
           colSpan={"5"}
           minH={"100vh"}
           boxShadow={"md"}
-          borderRadius={"10px"}
+          borderLeft={"2px"}
+          borderColor={"gray.200"}
         >
           <Outlet />
         </GridItem>

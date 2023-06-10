@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 function ProductDetails() {
-  const { id } = useParams();
+  let { id } = useParams();
 
   return <> hi {id}</>;
 }

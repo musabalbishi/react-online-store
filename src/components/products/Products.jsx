@@ -1,10 +1,12 @@
-import { Box, Text, Flex, Input } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
-import { useState, useEffect, useParams } from "react";
+import { Box, Text, Flex, Input, Center } from "@chakra-ui/react";
+import { NavLink, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import NotFound from "../NotFound";
+import { FaAccusoft, FaListUl } from "react-icons/fa";
+import { BsGrid, BsGrid3X3Gap } from "react-icons/bs";
 const Products = () => {
-  // let { id } = useParams();
+  let { id } = useParams();
 
   const [search, setSearch] = useState("");
   const [items, setItems] = useState([]);
@@ -43,16 +45,34 @@ const Products = () => {
     );
   };
   return (
-    <Box as="section" p={"3rem"}>
-      <Text>PRODUCTS</Text>
-      <Input
-        type="search"
-        placeholder="search"
-        w={"40vw"}
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <Flex gap={"2"} p={"3"} wrap={"wrap"} justifyContent={"start"}>
+    <Box as="section" p={"1rem 3rem"}>
+      <Text color={"#333"} fontSize={"1.5rem"}>
+        PRODUCTS
+      </Text>
+      <Center>
+        <Input
+          type="search"
+          bg={"#eee"}
+          placeholder="search"
+          w={"40vw"}
+          mb={"1rem"}
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </Center>
+      <Flex
+        alignItems={"center"}
+        justifyContent={"end"}
+        border={"1px solid #eee"}
+        borderRadius={"10px"}
+        gap={"1rem"}
+        p={"1rem"}
+      >
+        <BsGrid3X3Gap size={"1.5rem"} />
+        <BsGrid size={"1.5rem"} />
+        <FaListUl size={"1.5rem"} />
+      </Flex>
+      <Flex gap={"2"} p={"1rem"} wrap={"wrap"} justifyContent={"start"}>
         {searchItems()}
       </Flex>
     </Box>

@@ -13,7 +13,7 @@ import {
 
 function ProductCard(props) {
   return (
-    <Card maxW="sm" w={"20rem"}>
+    <Card maxW="sm" w={"20rem"} h={"30rem"} boxShadow={"xl"}>
       <CardBody>
         <Image
           h={"10rem"}
@@ -23,7 +23,9 @@ function ProductCard(props) {
           borderRadius="lg"
         />
         <Stack mt="6" spacing="3">
-          <Heading size="md">{props.title}</Heading>
+          <Heading size="md" textOverflow={"clip"}>
+            {props.title}
+          </Heading>
           <Text color="blue.600" fontSize="2xl">
             {props.price + "$"}
           </Text>

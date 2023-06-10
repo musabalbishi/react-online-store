@@ -1,20 +1,26 @@
-import { VStack, Text } from "@chakra-ui/react";
+import { VStack, Text, HStack } from "@chakra-ui/react";
+import { BsBagFill, BsGrid1X2Fill, BsPercent } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 function Sidebar() {
   return (
-    <VStack>
-      <Text>
-        {" "}
-        <NavLink to="/home/products">Products</NavLink>{" "}
-      </Text>
-      <Text>
-        {" "}
-        <NavLink to="/home/offers">Offers</NavLink>{" "}
-      </Text>
-      <Text>
-        {" "}
-        <NavLink to="/home/bookmarks">Bookmarks</NavLink>{" "}
-      </Text>
+    <VStack as={"aside"}>
+      {" "}
+      <NavLink to="/home/products">
+        <HStack as={"nav"}>
+          <BsBagFill />
+          <Text>Products</Text>
+        </HStack>
+      </NavLink>
+      <NavLink to="/home/offers">
+        <HStack as={"nav"}>
+          <BsPercent />
+          <Text>Offers</Text>
+        </HStack>
+      </NavLink>
+      <HStack as={"nav"}>
+        <BsGrid1X2Fill />
+        <Text>Categories</Text>
+      </HStack>
     </VStack>
   );
 }

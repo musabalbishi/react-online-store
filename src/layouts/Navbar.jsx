@@ -11,6 +11,9 @@ import {
   Button,
   Container,
 } from "@chakra-ui/react";
+
+import {} from "react-icons/fa";
+import { BsBookmark, BsBoxArrowInLeft, BsCart } from "react-icons/bs";
 import ToggleTheme from "../components/ui/ToggleTheme";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -28,6 +31,7 @@ const Navbar = () => {
       p={"3"}
       px={"12"}
       w={"100vw"}
+      boxShadow={"md"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"space-between"}
@@ -44,6 +48,7 @@ const Navbar = () => {
       {/* avatar */}
       <Box display={"flex"} alignItems={"center"} gap={"5"}>
         <ToggleTheme />
+
         <Container>
           {/* logout */}
           {getUsername ? (
@@ -61,10 +66,27 @@ const Navbar = () => {
             <Avatar src="https://bit.ly/broken-link" />
           </MenuButton>
           <MenuList>
-            <Text fontWeight="500">{getUsername}</Text>
-            <MenuItem>1</MenuItem>
-            <MenuItem>2</MenuItem>
-            <MenuItem>3</MenuItem>
+            <Text fontWeight="500" p={"1rem"}>
+              Hello, {getUsername}
+            </Text>
+            <MenuItem>
+              <BsCart />
+              <Text p={"0 1rem"} align={"center"} color={"#333"}>
+                My Cart
+              </Text>
+            </MenuItem>
+            <MenuItem>
+              <BsBookmark />
+              <Text p={"0 1rem"} align={"center"} color={"#333"}>
+                My Bookmarks
+              </Text>
+            </MenuItem>
+            <MenuItem>
+              <BsBoxArrowInLeft color="red" />
+              <Text p={"0 1rem"} align={"center"} color={"red"}>
+                Log out
+              </Text>
+            </MenuItem>
           </MenuList>
         </Menu>
       </Box>
