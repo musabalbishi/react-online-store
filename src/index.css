@@ -68,7 +68,9 @@ button:focus-visible {
 }
 
 .active {
-  background-color: #213547;
+  background-color: #a2aab1;
+  border: 1px solid #1a1a1a;
+  padding: 0.2rem 1rem;
 }
 
 /* section {

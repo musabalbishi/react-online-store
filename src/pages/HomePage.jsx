@@ -1,6 +1,7 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../layouts/Sidebar";
 import { Outlet } from "react-router-dom";
+import Footer from "../layouts/Footer";
 function HomePage() {
   return (
     <Box minH={"100vh"}>
@@ -24,6 +25,7 @@ function HomePage() {
           <Outlet />
         </GridItem>
       </Grid>
+      <Footer />
     </Box>
   );
 }

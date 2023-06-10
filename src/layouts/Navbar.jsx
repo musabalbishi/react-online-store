@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
   Box,
   Avatar,
@@ -10,19 +9,25 @@ import {
   MenuList,
   MenuItem,
   Button,
+  Container,
 } from "@chakra-ui/react";
-// import { useState } from "react";
-const Navbar = (props) => {
+import ToggleTheme from "../components/ui/ToggleTheme";
+import { useNavigate } from "react-router-dom";
+const Navbar = () => {
+  const navigate = useNavigate();
+  const getUsername = localStorage.getItem("username");
   const handleLogout = () => {
     localStorage.clear();
-    window.location.reload();
+    navigate("/");
+  };
+  const handleLogin = () => {
+    navigate("/signin");
   };
   return (
     <Flex
       p={"3"}
       px={"12"}
       w={"100vw"}
-      // boxShadow={"sm"}
       display={"flex"}
       alignItems={"center"}
       justifyContent={"space-between"}
@@ -38,15 +43,25 @@ const Navbar = (props) => {
 
       {/* avatar */}
       <Box display={"flex"} alignItems={"center"} gap={"5"}>
-        <Button bg={"red.300"} variant={"outline"} display={props.display}>
-          <Button onClick={handleLogout}>logout</Button>
-        </Button>
+        <ToggleTheme />
+        <Container>
+          {/* logout */}
+          {getUsername ? (
+            <Button onClick={handleLogout} bg={"red.300"} variant={"outline"}>
+              logout
+            </Button>
+          ) : (
+            <Button onClick={handleLogin} bg={"red.300"} variant={"outline"}>
+              login
+            </Button>
+          )}
+        </Container>
         <Menu>
           <MenuButton>
             <Avatar src="https://bit.ly/broken-link" />
           </MenuButton>
           <MenuList>
-            <Text fontWeight="500">Muhammad Ahmad</Text>
+            <Text fontWeight="500">{getUsername}</Text>
             <MenuItem>1</MenuItem>
             <MenuItem>2</MenuItem>
             <MenuItem>3</MenuItem>

@@ -8,19 +8,18 @@ import {
 import "./index.css";
 // layouts
 import RootLayout from "./layouts/RootLayout";
-// import EntryLayout from "./layouts/EntreyLayout";
 
 // pages
 import HomePage from "./pages/HomePage";
 import EntryPage from "./pages/EntryPage";
+import Signin from "./pages/auth/Signin";
+import Signup from "./pages/auth/Signup";
 
 // components
-import Products from "./components/Products";
+import Products from "./components/products/Products";
 import Offers from "./components/Offers";
 import Bookmarks from "./components/Bookmarks";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./components/products/ProductDetails";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
