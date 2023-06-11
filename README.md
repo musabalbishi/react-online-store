@@ -12,10 +12,10 @@ an online store using React Js for different items and products.
 - [Yup](https://github.com/jquense/yup) Yup is a schema builder for runtime value parsing and validation.
 
 
-###install
+### install
 ``` npm install ```
 
-###run
+### run
 ``` npm run dev ```
 
 
