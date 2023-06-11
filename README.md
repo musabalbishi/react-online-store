@@ -1,7 +1,7 @@
 # react-online-store
 
 
-an online store using React Js for different items and products.
+React Js online store for different items and products using [FakeStore API](https://fakestoreapi.com/docs) to get the data.
 
 
 
@@ -19,3 +19,18 @@ an online store using React Js for different items and products.
 ``` npm run dev ```
 
 
+### API
+#### GET ``` localhost:5173/home/products/ ```
+- Return: return list of all the available products.
+
+- Sample Response:
+    ```
+   [{
+      id:1,
+      title:'...',
+      price:'...',
+      category:'...',
+      description:'...',
+      image:'...'
+    }]
+    ```
